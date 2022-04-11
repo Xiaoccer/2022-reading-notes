@@ -2,6 +2,11 @@
 
 # vim杂记
 
+* ``:%!xxd`` 转换成二进制模式
+* ```:%!grep xxx``从vim中筛选
+* vim - 管道输出给vim
+* a.out | head -n 10000
+
 ## NORMAL模式下
 
 ```sh
@@ -91,6 +96,9 @@ set et // 将tab由空格组成
 
 # GDB杂记
 
+* starti 从第一条命令开始
+* 打印进程内存 info proc {mappings,...}
+
 ```
 n // 不进入函数
 s // 进入函数
@@ -133,5 +141,15 @@ u main.cpp:33 // 运行到33行
 3.attach pid
 
 backward-cpp库 可自动打印出错时的栈信息
+
+// 多线程
+set scheduler-locking on // 设置多线程调试时，step只执行单个线程
+info threads
+thread x
 ```
 
+## GCC
+
+* gcc -E 展开宏
+* gcc -c 只编译文件，不链接，可通过ld来链接
+* strace -f gcc xxx.c
